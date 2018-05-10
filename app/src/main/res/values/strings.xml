@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Rummy 500 Scorepad</string>
+    <string name="player_A">Player A</string>
+    <string name="player_B">Player B</string>
+    <string name="player_C">Player C</string>
+    <string name="add_five">+5</string>
+    <string name="add_ten">+10</string>
+    <string name="add_fifteen">+15</string>
+    <string name="reset">Reset</string>
+    <string name="starting_score">0</string>
+</resources>
