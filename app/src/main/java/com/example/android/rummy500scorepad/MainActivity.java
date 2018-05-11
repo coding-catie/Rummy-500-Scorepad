@@ -78,5 +78,6 @@ public class MainActivity extends AppCompatActivity {
         scorePlayerC = 0;
         displayForPlayerA(scorePlayerA);
         displayForPlayerB(scorePlayerB);
+        displayForPlayerC(scorePlayerC);
     }
 }
