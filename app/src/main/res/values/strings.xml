@@ -1,8 +1,16 @@
 <resources>
     <string name="app_name">Rummy 500 Scorepad</string>
+    <string name="welcome">Welcome to your Rummy 500 Scorepad!</string>
+    <string name="two_players">2 Players</string>
+    <string name="three_players">3 Players</string>
+    <string name="four_players">4 Players</string>
+    <string name="prompt_player_names">What are the names of the players?</string>
+    <string name="next">Next</string>
     <string name="player_A">Player A</string>
     <string name="player_B">Player B</string>
     <string name="player_C">Player C</string>
+    <string name="player_D">Player D</string>
+    <string name="subtract_five">-5</string>
     <string name="add_five">+5</string>
     <string name="add_ten">+10</string>
     <string name="add_fifteen">+15</string>
