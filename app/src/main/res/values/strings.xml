@@ -16,4 +16,10 @@
     <string name="add_fifteen">+15</string>
     <string name="reset">Reset</string>
     <string name="starting_score">0</string>
+    <string name="enter_two_names">Enter 2 Player Names</string>
+    <string name="enter_three_names">Enter 3 Player Names</string>
+    <string name="enter_four_names">Enter 4 Player Names</string>
+    <string name="game_two_players">2 Player Game</string>
+    <string name="game_three_players">3 Player Game</string>
+    <string name="game_four_players">4 Player Game</string>
 </resources>

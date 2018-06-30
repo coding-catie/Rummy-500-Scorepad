@@ -16,6 +16,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Enter2PlayersNames"
+            android:label="@string/enter_two_names">
+        </activity>
+        <activity
+            android:name=".Enter3PlayersNames"
+            android:label="@string/enter_three_names">
+        </activity>
+        <activity
+            android:name=".Enter4PlayersNames"
+            android:label="@string/enter_four_names">
+        </activity>
+        <activity
+            android:name=".Game2Players"
+            android:label="@string/game_two_players">
+        </activity>
+        <activity
+            android:name=".Game3Players"
+            android:label="@string/game_three_players">
+        </activity>
+        <activity
+            android:name=".Game4Players"
+            android:label="@string/game_four_players">
+        </activity>
     </application>
 
 </manifest>

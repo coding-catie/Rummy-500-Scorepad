@@ -14,7 +14,7 @@ public class Game4Players extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_game4_players);
     }
     /**
      * Displays the given scores for Players A, B, and C.

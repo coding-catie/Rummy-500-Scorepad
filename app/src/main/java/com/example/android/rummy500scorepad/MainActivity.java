@@ -1,8 +1,10 @@
 package com.example.android.rummy500scorepad;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.android.rummy500scorepad.R;
@@ -16,68 +18,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-    /**
-     * Displays the given scores for Players A, B, and C.
-     */
-    public void displayForPlayerA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player_a_score);
-        scoreView.setText(String.valueOf(score));
-    }
-    public void displayForPlayerB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player_b_score);
-        scoreView.setText(String.valueOf(score));
-    }
-    public void displayForPlayerC(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player_c_score);
-        scoreView.setText(String.valueOf(score));
+
+        Button buttonForTwo = (Button)findViewById(R.id.two_player_button);
+        buttonForTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Enter2PlayersNames.class));
+            }
+        });
+
+        Button buttonForThree = (Button)findViewById(R.id.three_player_button);
+        buttonForThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Enter3PlayersNames.class));
+            }
+        });
+
+        Button buttonForFour = (Button)findViewById(R.id.four_player_button);
+        buttonForFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Enter4PlayersNames.class));
+            }
+        });
     }
 
-    /**
-     *Adding points for Players A, B, and C.
-     */
-    public void addFiveForPlayerA(View v) {
-        scorePlayerA = scorePlayerA + 5;
-        displayForPlayerA(scorePlayerA);
-    }
-    public void addTenForPlayerA(View v) {
-        scorePlayerA = scorePlayerA + 10;
-        displayForPlayerA(scorePlayerA);
-    }
-    public void addFifteenForPlayerA(View v) {
-        scorePlayerA = scorePlayerA + 15;
-        displayForPlayerA(scorePlayerA);
-    }
-    public void addFiveForPlayerB(View v) {
-        scorePlayerB = scorePlayerB + 5;
-        displayForPlayerB(scorePlayerB);
-    }
-    public void addTenForPlayerB(View v) {
-        scorePlayerB = scorePlayerB + 10;
-        displayForPlayerB(scorePlayerB);
-    }
-    public void addFifteenForPlayerB(View v) {
-        scorePlayerB = scorePlayerB + 15;
-        displayForPlayerB(scorePlayerB);
-    }
-    public void addFiveForPlayerC(View v) {
-        scorePlayerC = scorePlayerC + 5;
-        displayForPlayerC(scorePlayerC);
-    }
-    public void addTenForPlayerC(View v) {
-        scorePlayerC = scorePlayerC + 10;
-        displayForPlayerC(scorePlayerC);
-    }
-    public void addFifteenForPlayerC(View v) {
-        scorePlayerC = scorePlayerC + 15;
-        displayForPlayerC(scorePlayerC);
-    }
-    public void reset(View v) {
-        scorePlayerA = 0;
-        scorePlayerB = 0;
-        scorePlayerC = 0;
-        displayForPlayerA(scorePlayerA);
-        displayForPlayerB(scorePlayerB);
-        displayForPlayerC(scorePlayerC);
-    }
 }
