@@ -1,9 +1,12 @@
 package com.example.android.rummy500scorepad;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class Game4Players extends AppCompatActivity {
     int scorePlayerA = 0;
@@ -15,6 +18,27 @@ public class Game4Players extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game4_players);
+
+        //get incoming intent
+        Intent intent = getIntent();
+        if(intent != null){
+            //get string extra using same key as before
+            String passedString1 = intent.getStringExtra("I want Player A Name");
+            String passedString2 = intent.getStringExtra("I want Player B Name");
+            String passedString3 = intent.getStringExtra("I want Player C Name");
+            String passedString4 = intent.getStringExtra("I want Player D name");
+
+            //do whatever you want with this String.
+            TextView playerAName = findViewById(R.id.playerATitle);
+            playerAName.setText(passedString1);
+            TextView playerBName = findViewById(R.id.playerBTitle);
+            playerBName.setText(passedString2);
+            TextView playerCName = findViewById(R.id.playerCTitle);
+            playerCName.setText(passedString3);
+            TextView playerDName = findViewById(R.id.playerDTitle);
+            playerDName.setText(passedString4);
+        }
+
     }
     /**
      * Displays the given scores for Players A, B, and C.
