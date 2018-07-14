@@ -1,4 +1,4 @@
-package com.example.android.rummy500scorepad;
+package com.catielynn.android.rummy500scorepad;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

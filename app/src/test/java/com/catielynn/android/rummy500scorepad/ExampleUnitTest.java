@@ -1,4 +1,4 @@
-package com.example.android.rummy500scorepad;
+package com.catielynn.android.rummy500scorepad;
 
 import org.junit.Test;
 
