@@ -1,6 +1,15 @@
 # Rummy-500-Scorepad
-Rummy 500 Score Keeper
-(Inspired and rooted in the Score Keeper App project in Udacity's Android Basics nanodegree program.
+Android Basics Nanodegree - Project 2 Score Keeper
 
-I grew up with my family playing Rummy 500, and I was taught by them.
-Playing this game is one of my favorite ways to spend time with them. I'm hoping to impress them with this mobile app I created with them in mind.
+This project is a simple app for keeping score of a game of your choice. I went beyond the requirements of this project after submitting, because I wanted to improve it for publishing. Here is the link for it on the Play Store: https://play.google.com/store/apps/details?id=com.catielynn.android.rummy500scorepadapp
+
+This project utilizes the following (requirements):
+- Buttons for adding and subtracting score amounts
+- Reset button that applies to all scores
+- Displays different groups of buttons for different players/teams
+- Background image (need to go back and add multiple densities)
+
+This project also utilizes the following (beyond scope):
+- EditText fields for player names
+- ScrollView
+- Options for 2-4 players
