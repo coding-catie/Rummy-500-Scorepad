@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.catielynn.android.rummy500scorepad">
+    package="com.catielynn.android.rummy500scorepadapp">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.catielynn.android.rummy500scorepadapp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,27 +17,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Enter2PlayersNames"
+            android:name="com.catielynn.android.rummy500scorepadapp.Enter2PlayersNames"
             android:label="@string/enter_two_names">
         </activity>
         <activity
-            android:name=".Enter3PlayersNames"
+            android:name="com.catielynn.android.rummy500scorepadapp.Enter3PlayersNames"
             android:label="@string/enter_three_names">
         </activity>
         <activity
-            android:name=".Enter4PlayersNames"
+            android:name="com.catielynn.android.rummy500scorepadapp.Enter4PlayersNames"
             android:label="@string/enter_four_names">
         </activity>
         <activity
-            android:name=".Game2Players"
+            android:name="com.catielynn.android.rummy500scorepadapp.Game2Players"
             android:label="@string/game_two_players">
         </activity>
         <activity
-            android:name=".Game3Players"
+            android:name="com.catielynn.android.rummy500scorepadapp.Game3Players"
             android:label="@string/game_three_players">
         </activity>
         <activity
-            android:name=".Game4Players"
+            android:name="com.catielynn.android.rummy500scorepadapp.Game4Players"
             android:label="@string/game_four_players">
         </activity>
     </application>

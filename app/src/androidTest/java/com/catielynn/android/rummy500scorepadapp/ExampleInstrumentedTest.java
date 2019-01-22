@@ -1,4 +1,4 @@
-package com.catielynn.android.rummy500scorepad;
+package com.catielynn.android.rummy500scorepadapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.android.rummy500scorepad", appContext.getPackageName());
+        assertEquals("com.example.android.rummy500scorepadapp", appContext.getPackageName());
     }
 }

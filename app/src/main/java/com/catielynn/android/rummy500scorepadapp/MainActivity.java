@@ -1,13 +1,10 @@
-package com.catielynn.android.rummy500scorepad;
+package com.catielynn.android.rummy500scorepadapp;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-
-import com.catielynn.android.rummy500scorepad.R;
 
 public class MainActivity extends AppCompatActivity {
     int scorePlayerA = 0;

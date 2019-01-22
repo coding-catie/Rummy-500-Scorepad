@@ -1,15 +1,18 @@
-package com.catielynn.android.rummy500scorepad;
+package com.catielynn.android.rummy500scorepadapp;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Game2Players extends AppCompatActivity {
     int scorePlayerA = 0;
     int scorePlayerB = 0;
+
+    // Stored scores in integers for both teams.
+    static final String PLAYERASCORE = "player_a_score";
+    static final String PLAYERBSCORE = "player_b_score";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,14 +20,14 @@ public class Game2Players extends AppCompatActivity {
         setContentView(R.layout.activity_game2_players);
 
 
-        //get incoming intent
+        // Get incoming intent
         Intent intent = getIntent();
         if(intent != null){
-            //get string extra using same key as before
+            // Get string extra using same key as before
             String passedString1 = intent.getStringExtra("I want Player A Name");
             String passedString2 = intent.getStringExtra("I want Player B Name");
 
-            //do whatever you want with this String.
+            // Apply names from intent to name strings in this activity
             TextView playerAName = findViewById(R.id.playerATitle);
             playerAName.setText(passedString1);
             TextView playerBName = findViewById(R.id.playerBTitle);
@@ -45,7 +48,7 @@ public class Game2Players extends AppCompatActivity {
     }
 
     /**
-     *Adding points for Players A and B.
+     *Changing scores for Players A and B.
      */
     public void subtractFiveFromPlayerA(View v) {
         scorePlayerA = scorePlayerA - 5;
@@ -82,6 +85,29 @@ public class Game2Players extends AppCompatActivity {
     public void reset(View v) {
         scorePlayerA = 0;
         scorePlayerB = 0;
+        displayForPlayerA(scorePlayerA);
+        displayForPlayerB(scorePlayerB);
+    }
+
+    /**
+     * @param savedInstanceState stores scores for both players before application stops.
+     */
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt(PLAYERASCORE, scorePlayerA);
+        savedInstanceState.putInt(PLAYERBSCORE, scorePlayerB);
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    /**
+     * Restore and display scores from savedInstanceState after application stops,
+     * or when changing rotation between portrait and landscape mode.
+     */
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        scorePlayerA = savedInstanceState.getInt(PLAYERASCORE);
+        scorePlayerB = savedInstanceState.getInt(PLAYERBSCORE);
         displayForPlayerA(scorePlayerA);
         displayForPlayerB(scorePlayerB);
     }
