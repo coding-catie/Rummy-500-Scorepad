@@ -11,6 +11,7 @@ public class Game2Players extends AppCompatActivity {
     int scorePlayerA = 0;
     int scorePlayerB = 0;
 
+    // Error in logcat occurs here
     public TextView playerAName = findViewById(R.id.playerATitle);
     public TextView playerBName = findViewById(R.id.playerBTitle);
 
