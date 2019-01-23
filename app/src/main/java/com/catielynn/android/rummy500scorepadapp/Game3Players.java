@@ -43,15 +43,15 @@ public class Game3Players extends AppCompatActivity {
      * Displays the given scores for Players A, B, and C.
      */
     public void displayForPlayerA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player_a_score);
+        TextView scoreView = findViewById(R.id.player_a_score);
         scoreView.setText(String.valueOf(score));
     }
     public void displayForPlayerB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player_b_score);
+        TextView scoreView = findViewById(R.id.player_b_score);
         scoreView.setText(String.valueOf(score));
     }
     public void displayForPlayerC(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player_c_score);
+        TextView scoreView = findViewById(R.id.player_c_score);
         scoreView.setText(String.valueOf(score));
     }
 

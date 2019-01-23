@@ -5,10 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Game2Players extends AppCompatActivity {
     int scorePlayerA = 0;
     int scorePlayerB = 0;
+
+    public TextView playerAName = findViewById(R.id.playerATitle);
+    public TextView playerBName = findViewById(R.id.playerBTitle);
 
     // Stored scores in integers for both teams.
     static final String PLAYERASCORE = "player_a_score";
@@ -28,9 +32,7 @@ public class Game2Players extends AppCompatActivity {
             String passedString2 = intent.getStringExtra("I want Player B Name");
 
             // Apply names from intent to name strings in this activity
-            TextView playerAName = findViewById(R.id.playerATitle);
             playerAName.setText(passedString1);
-            TextView playerBName = findViewById(R.id.playerBTitle);
             playerBName.setText(passedString2);
         }
     }
@@ -39,12 +41,14 @@ public class Game2Players extends AppCompatActivity {
      * Displays the given scores for Players A, B, and C.
      */
     public void displayForPlayerA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player_a_score);
+        TextView scoreView = findViewById(R.id.player_a_score);
         scoreView.setText(String.valueOf(score));
+        determineWinner();
     }
     public void displayForPlayerB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player_b_score);
+        TextView scoreView = findViewById(R.id.player_b_score);
         scoreView.setText(String.valueOf(score));
+        determineWinner();
     }
 
     /**
@@ -110,5 +114,13 @@ public class Game2Players extends AppCompatActivity {
         scorePlayerB = savedInstanceState.getInt(PLAYERBSCORE);
         displayForPlayerA(scorePlayerA);
         displayForPlayerB(scorePlayerB);
+    }
+
+    public void determineWinner(){
+        if(scorePlayerA >= 500 && scorePlayerA > scorePlayerB){
+            Toast.makeText(getApplicationContext(), playerAName + " wins!", Toast.LENGTH_SHORT).show();
+        } else if(scorePlayerB >= 500 && scorePlayerB > scorePlayerA){
+            Toast.makeText(getApplicationContext(), playerBName + " wins!", Toast.LENGTH_SHORT).show();
+        }
     }
 }
