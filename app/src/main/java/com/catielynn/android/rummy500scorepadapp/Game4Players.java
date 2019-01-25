@@ -5,12 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Game4Players extends AppCompatActivity {
     int scorePlayerA = 0;
     int scorePlayerB = 0;
     int scorePlayerC = 0;
     int scorePlayerD = 0;
+
+    public TextView playerAName;
+    public TextView playerBName;
+    public TextView playerCName;
+    public TextView playerDName;
 
     // Stored scores in integers for both teams.
     static final String PLAYERASCORE = "player_a_score";
@@ -33,35 +39,34 @@ public class Game4Players extends AppCompatActivity {
             String passedString4 = intent.getStringExtra("I want Player D name");
 
             // Apply names from intent to name strings in this activity
-            TextView playerAName = findViewById(R.id.playerATitle);
             playerAName.setText(passedString1);
-            TextView playerBName = findViewById(R.id.playerBTitle);
             playerBName.setText(passedString2);
-            TextView playerCName = findViewById(R.id.playerCTitle);
             playerCName.setText(passedString3);
-            TextView playerDName = findViewById(R.id.playerDTitle);
             playerDName.setText(passedString4);
         }
-
     }
     /**
      * Displays the given scores for Players A, B, and C.
      */
     public void displayForPlayerA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player_a_score);
+        TextView scoreView = findViewById(R.id.player_a_score);
         scoreView.setText(String.valueOf(score));
+        determineWinner();
     }
     public void displayForPlayerB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player_b_score);
+        TextView scoreView = findViewById(R.id.player_b_score);
         scoreView.setText(String.valueOf(score));
+        determineWinner();
     }
     public void displayForPlayerC(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player_c_score);
+        TextView scoreView = findViewById(R.id.player_c_score);
         scoreView.setText(String.valueOf(score));
+        determineWinner();
     }
     public void displayForPlayerD(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.player_d_score);
+        TextView scoreView = findViewById(R.id.player_d_score);
         scoreView.setText(String.valueOf(score));
+        determineWinner();
     }
 
     /**
@@ -169,5 +174,18 @@ public class Game4Players extends AppCompatActivity {
         displayForPlayerB(scorePlayerB);
         displayForPlayerC(scorePlayerC);
         displayForPlayerD(scorePlayerD);
+    }
+
+    // Use this function to check which, if any, players have over 500 and more points than the others.
+    public void determineWinner(){
+        if((scorePlayerA >= 500) && (scorePlayerA > scorePlayerB) && (scorePlayerA > scorePlayerC) && (scorePlayerA > scorePlayerD)){
+            Toast.makeText(this, playerAName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerB >= 500) && (scorePlayerB > scorePlayerA) && (scorePlayerB > scorePlayerC) && (scorePlayerB > scorePlayerD)){
+            Toast.makeText(this, playerBName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerC >= 500) && (scorePlayerC > scorePlayerA) && (scorePlayerC > scorePlayerB) && (scorePlayerC > scorePlayerD)){
+            Toast.makeText(this, playerCName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerD >= 500) && (scorePlayerD > scorePlayerA) && (scorePlayerD > scorePlayerB) && (scorePlayerD > scorePlayerC)){
+            Toast.makeText(this, playerDName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
+        }
     }
 }

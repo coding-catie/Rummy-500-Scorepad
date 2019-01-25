@@ -5,11 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Game3Players extends AppCompatActivity {
     int scorePlayerA = 0;
     int scorePlayerB = 0;
     int scorePlayerC = 0;
+
+    public TextView playerAName;
+    public TextView playerBName;
+    public TextView playerCName;
 
     // Stored scores in integers for both teams.
     static final String PLAYERASCORE = "player_a_score";
@@ -30,11 +35,8 @@ public class Game3Players extends AppCompatActivity {
             String passedString3 = intent.getStringExtra("I want Player C Name");
 
             // Apply names from intent to name strings in this activity
-            TextView playerAName = findViewById(R.id.playerATitle);
             playerAName.setText(passedString1);
-            TextView playerBName = findViewById(R.id.playerBTitle);
             playerBName.setText(passedString2);
-            TextView playerCName = findViewById(R.id.playerCTitle);
             playerCName.setText(passedString3);
         }
 
@@ -45,14 +47,17 @@ public class Game3Players extends AppCompatActivity {
     public void displayForPlayerA(int score) {
         TextView scoreView = findViewById(R.id.player_a_score);
         scoreView.setText(String.valueOf(score));
+        determineWinner();
     }
     public void displayForPlayerB(int score) {
         TextView scoreView = findViewById(R.id.player_b_score);
         scoreView.setText(String.valueOf(score));
+        determineWinner();
     }
     public void displayForPlayerC(int score) {
         TextView scoreView = findViewById(R.id.player_c_score);
         scoreView.setText(String.valueOf(score));
+        determineWinner();
     }
 
     /**
@@ -139,6 +144,17 @@ public class Game3Players extends AppCompatActivity {
         displayForPlayerA(scorePlayerA);
         displayForPlayerB(scorePlayerB);
         displayForPlayerC(scorePlayerC);
+    }
+
+    // Use this function to check which, if any, players have over 500 and more points than the others.
+    public void determineWinner(){
+        if((scorePlayerA >= 500) && (scorePlayerA > scorePlayerB) && (scorePlayerA > scorePlayerC)){
+            Toast.makeText(this, playerAName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerB >= 500) && (scorePlayerB > scorePlayerA) && (scorePlayerB > scorePlayerC)){
+            Toast.makeText(this, playerBName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerC >= 500) && (scorePlayerC > scorePlayerA) && (scorePlayerC > scorePlayerB)){
+            Toast.makeText(this, playerCName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
+        }
     }
 }
 

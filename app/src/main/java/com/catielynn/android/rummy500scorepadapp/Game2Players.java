@@ -11,9 +11,8 @@ public class Game2Players extends AppCompatActivity {
     int scorePlayerA = 0;
     int scorePlayerB = 0;
 
-    // Error in logcat occurs here
-    public TextView playerAName = findViewById(R.id.playerATitle);
-    public TextView playerBName = findViewById(R.id.playerBTitle);
+    public TextView playerAName;
+    public TextView playerBName;
 
     // Stored scores in integers for both teams.
     static final String PLAYERASCORE = "player_a_score";
@@ -24,6 +23,8 @@ public class Game2Players extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game2_players);
 
+        playerAName = findViewById(R.id.playerATitle);
+        playerBName = findViewById(R.id.playerBTitle);
 
         // Get incoming intent
         Intent intent = getIntent();
@@ -117,11 +118,12 @@ public class Game2Players extends AppCompatActivity {
         displayForPlayerB(scorePlayerB);
     }
 
+    // Use this function to check which, if any, players have over 500 and more points than the others.
     public void determineWinner(){
         if(scorePlayerA >= 500 && scorePlayerA > scorePlayerB){
-            Toast.makeText(getApplicationContext(), playerAName + " wins!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, playerAName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
         } else if(scorePlayerB >= 500 && scorePlayerB > scorePlayerA){
-            Toast.makeText(getApplicationContext(), playerBName + " wins!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, playerBName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
         }
     }
 }
