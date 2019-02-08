@@ -10,11 +10,16 @@
     <string name="player_B">Player B</string>
     <string name="player_C">Player C</string>
     <string name="player_D">Player D</string>
+
+    <!-- Buttons -->
     <string name="subtract_five">-5</string>
     <string name="add_five">+5</string>
     <string name="add_ten">+10</string>
     <string name="add_fifteen">+15</string>
     <string name="reset">Reset</string>
+    <string name="end_round">End Round</string>
+
+    <string name="round_title">Round </string>
     <string name="starting_score">0</string>
     <string name="enter_two_names">Enter 2 Player Names</string>
     <string name="enter_three_names">Enter 3 Player Names</string>

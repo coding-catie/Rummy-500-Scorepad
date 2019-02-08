@@ -10,6 +10,7 @@ import android.widget.Toast;
 public class Game2Players extends AppCompatActivity {
     int scorePlayerA = 0;
     int scorePlayerB = 0;
+    int roundNumber = 0;
 
     public TextView playerAName;
     public TextView playerBName;
@@ -45,12 +46,16 @@ public class Game2Players extends AppCompatActivity {
     public void displayForPlayerA(int score) {
         TextView scoreView = findViewById(R.id.player_a_score);
         scoreView.setText(String.valueOf(score));
-        determineWinner();
     }
     public void displayForPlayerB(int score) {
         TextView scoreView = findViewById(R.id.player_b_score);
         scoreView.setText(String.valueOf(score));
-        determineWinner();
+    }
+
+    // Displays current round
+    public void displayForRoundNumber(View v) {
+        TextView roundView = findViewById(R.id.round_title);
+        roundTitle = roundView + String.valueOf(roundNumber);
     }
 
     /**
@@ -88,6 +93,12 @@ public class Game2Players extends AppCompatActivity {
         scorePlayerB = scorePlayerB + 15;
         displayForPlayerB(scorePlayerB);
     }
+
+    public void addRound(View v) {
+        roundNumber += 1;
+        determineWinner();
+    }
+
     public void reset(View v) {
         scorePlayerA = 0;
         scorePlayerB = 0;
