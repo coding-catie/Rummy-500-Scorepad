@@ -11,5 +11,5 @@ This project utilizes the following (requirements):
 
 This project also utilizes the following (beyond scope):
 - EditText fields for player names
-- ScrollView
 - Options for 2-4 players
+- Toast message for winner
