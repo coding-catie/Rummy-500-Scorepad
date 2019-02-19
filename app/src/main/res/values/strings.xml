@@ -19,7 +19,7 @@
     <string name="reset">Reset</string>
     <string name="end_round">End Round</string>
 
-    <string name="round_title">Round </string>
+    <string name="round_text">Round</string>
     <string name="starting_score">0</string>
     <string name="enter_two_names">Enter 2 Player Names</string>
     <string name="enter_three_names">Enter 3 Player Names</string>

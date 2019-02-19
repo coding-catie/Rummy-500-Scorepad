@@ -5,7 +5,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/greenfelt" >
 
         <LinearLayout
@@ -20,7 +20,8 @@
                 android:gravity="center_horizontal"
                 android:textStyle="italic"
                 android:textSize="28sp"
-                android:text="@string/round_title"/>
+                android:text="@string/round_text"
+                android:layout_marginTop="16dp"/>
 
             <RelativeLayout
                 android:id="@+id/playerAStats"
@@ -158,26 +159,29 @@
                         android:layout_weight="2"/>
                 </LinearLayout>
             </RelativeLayout>
+            <Button
+                android:id="@+id/round_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:text="@string/end_round"
+                android:gravity="center"
+                android:onClick="addRound"
+                android:layout_above="@id/reset_button"
+                android:layout_marginBottom="24dp"/>
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:text="@string/reset"
+                android:gravity="center"
+                android:onClick="reset"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="24dp"/>
         </LinearLayout>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:text="@string/end_round"
-            android:gravity="center"
-            android:onClick="addRound"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="24dp"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:text="@string/reset"
-            android:gravity="center"
-            android:onClick="reset"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="24dp"/>
     </RelativeLayout>
 </ScrollView>

@@ -10,10 +10,11 @@ import android.widget.Toast;
 public class Game2Players extends AppCompatActivity {
     int scorePlayerA = 0;
     int scorePlayerB = 0;
-    int roundNumber = 0;
+    int roundNumber = 1;
 
     public TextView playerAName;
     public TextView playerBName;
+    public TextView roundTitle;
 
     // Stored scores in integers for both teams.
     static final String PLAYERASCORE = "player_a_score";
@@ -26,6 +27,8 @@ public class Game2Players extends AppCompatActivity {
 
         playerAName = findViewById(R.id.playerATitle);
         playerBName = findViewById(R.id.playerBTitle);
+        roundTitle = findViewById(R.id.round_title);
+        displayForRoundTitle(1);
 
         // Get incoming intent
         Intent intent = getIntent();
@@ -53,9 +56,11 @@ public class Game2Players extends AppCompatActivity {
     }
 
     // Displays current round
-    public void displayForRoundNumber(View v) {
-        TextView roundView = findViewById(R.id.round_title);
-        roundTitle = roundView + String.valueOf(roundNumber);
+    public void displayForRoundTitle(int roundNumber) {
+        String roundNumberString = " " + roundNumber;
+        String roundNameString = getString(R.string.round_text);
+        String roundTitleString = roundNameString + roundNumberString;
+        roundTitle.setText(roundTitleString);
     }
 
     /**
@@ -97,6 +102,7 @@ public class Game2Players extends AppCompatActivity {
     public void addRound(View v) {
         roundNumber += 1;
         determineWinner();
+        displayForRoundTitle(roundNumber);
     }
 
     public void reset(View v) {
