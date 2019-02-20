@@ -13,7 +13,18 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/round_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textStyle="italic"
+                android:textSize="28sp"
+                android:text="@string/round_text"
+                android:layout_marginTop="16dp"/>
+
             <RelativeLayout
+                android:id="@+id/playerAStats"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -27,7 +38,7 @@
                     android:id="@+id/playerATitle"
                     android:textSize="24sp"
                     android:textColor="@color/black"
-                    android:fontFamily="sans-serif-medium"/>
+                    android:textStyle="bold"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -81,6 +92,7 @@
                 </LinearLayout>
             </RelativeLayout>
             <RelativeLayout
+                android:id="@+id/playerBStats"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -94,7 +106,7 @@
                     android:id="@+id/playerBTitle"
                     android:textSize="24sp"
                     android:textColor="@color/black"
-                    android:fontFamily="sans-serif-medium"/>
+                    android:textStyle="bold"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -148,6 +160,7 @@
                 </LinearLayout>
             </RelativeLayout>
             <RelativeLayout
+                android:id="@+id/playerCStats"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -161,7 +174,7 @@
                     android:id="@+id/playerCTitle"
                     android:textSize="24sp"
                     android:textColor="@color/black"
-                    android:fontFamily="sans-serif-medium"/>
+                    android:textStyle="bold"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -215,6 +228,7 @@
                 </LinearLayout>
             </RelativeLayout>
             <RelativeLayout
+                android:id="@+id/playerDStats"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -228,7 +242,7 @@
                     android:id="@+id/playerDTitle"
                     android:textSize="24sp"
                     android:textColor="@color/black"
-                    android:fontFamily="sans-serif-medium"/>
+                    android:textStyle="bold"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -281,16 +295,27 @@
                         android:layout_weight="2"/>
                 </LinearLayout>
             </RelativeLayout>
+            <Button
+                android:id="@+id/round_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:text="@string/end_round"
+                android:gravity="center"
+                android:onClick="addRound"
+                android:layout_marginBottom="24dp"/>
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:text="@string/reset"
+                android:gravity="center"
+                android:onClick="reset"
+                android:layout_marginBottom="24dp"/>
         </LinearLayout>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:text="@string/reset"
-            android:gravity="center"
-            android:onClick="reset"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="24dp"/>
     </RelativeLayout>
 </ScrollView>

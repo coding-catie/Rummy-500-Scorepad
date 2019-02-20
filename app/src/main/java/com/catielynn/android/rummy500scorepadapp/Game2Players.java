@@ -55,7 +55,9 @@ public class Game2Players extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 
-    // Displays current round
+    /**
+     * Displays current round with string and numeral
+     */
     public void displayForRoundTitle(int roundNumber) {
         String roundNumberString = " " + roundNumber;
         String roundNameString = getString(R.string.round_text);
@@ -99,17 +101,21 @@ public class Game2Players extends AppCompatActivity {
         displayForPlayerB(scorePlayerB);
     }
 
+    // Add 1 to round numeral and display
     public void addRound(View v) {
         roundNumber += 1;
         determineWinner();
         displayForRoundTitle(roundNumber);
     }
 
+    // Set all scores to 0
     public void reset(View v) {
         scorePlayerA = 0;
         scorePlayerB = 0;
         displayForPlayerA(scorePlayerA);
         displayForPlayerB(scorePlayerB);
+        roundNumber = 1;
+        displayForRoundTitle(roundNumber);
     }
 
     /**
@@ -138,9 +144,9 @@ public class Game2Players extends AppCompatActivity {
     // Use this function to check which, if any, players have over 500 and more points than the others.
     public void determineWinner(){
         if(scorePlayerA >= 500 && scorePlayerA > scorePlayerB){
-            Toast.makeText(this, playerAName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, playerAName.getText().toString() + " wins the game!", Toast.LENGTH_SHORT).show();
         } else if(scorePlayerB >= 500 && scorePlayerB > scorePlayerA){
-            Toast.makeText(this, playerBName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, playerBName.getText().toString() + " wins the game!", Toast.LENGTH_SHORT).show();
         }
     }
 }

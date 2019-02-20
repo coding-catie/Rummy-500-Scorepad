@@ -5,7 +5,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/greenfelt" >
 
         <LinearLayout
@@ -38,7 +38,7 @@
                     android:id="@+id/playerATitle"
                     android:textSize="24sp"
                     android:textColor="@color/black"
-                    android:fontFamily="sans-serif-medium"/>
+                    android:textStyle="bold"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -106,7 +106,7 @@
                     android:id="@+id/playerBTitle"
                     android:textSize="24sp"
                     android:textColor="@color/black"
-                    android:fontFamily="sans-serif-medium"/>
+                    android:textStyle="bold"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -169,7 +169,6 @@
                 android:text="@string/end_round"
                 android:gravity="center"
                 android:onClick="addRound"
-                android:layout_above="@id/reset_button"
                 android:layout_marginBottom="24dp"/>
             <Button
                 android:id="@+id/reset_button"
@@ -180,7 +179,6 @@
                 android:text="@string/reset"
                 android:gravity="center"
                 android:onClick="reset"
-                android:layout_alignParentBottom="true"
                 android:layout_marginBottom="24dp"/>
         </LinearLayout>
     </RelativeLayout>

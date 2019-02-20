@@ -11,12 +11,14 @@ public class Game3Players extends AppCompatActivity {
     int scorePlayerA = 0;
     int scorePlayerB = 0;
     int scorePlayerC = 0;
+    int roundNumber = 1;
 
     public TextView playerAName;
     public TextView playerBName;
     public TextView playerCName;
+    public TextView roundTitle;
 
-    // Stored scores in integers for both teams.
+    // Stored scores in integers for all players.
     static final String PLAYERASCORE = "player_a_score";
     static final String PLAYERBSCORE = "player_b_score";
     static final String PLAYERCSCORE = "player_c_score";
@@ -25,6 +27,12 @@ public class Game3Players extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game3_players);
+
+        playerAName = findViewById(R.id.playerATitle);
+        playerBName = findViewById(R.id.playerBTitle);
+        playerCName = findViewById(R.id.playerCTitle);
+        roundTitle = findViewById(R.id.round_title);
+        displayForRoundTitle(1);
 
         // Get incoming intent
         Intent intent = getIntent();
@@ -47,17 +55,24 @@ public class Game3Players extends AppCompatActivity {
     public void displayForPlayerA(int score) {
         TextView scoreView = findViewById(R.id.player_a_score);
         scoreView.setText(String.valueOf(score));
-        determineWinner();
     }
     public void displayForPlayerB(int score) {
         TextView scoreView = findViewById(R.id.player_b_score);
         scoreView.setText(String.valueOf(score));
-        determineWinner();
     }
     public void displayForPlayerC(int score) {
         TextView scoreView = findViewById(R.id.player_c_score);
         scoreView.setText(String.valueOf(score));
-        determineWinner();
+    }
+
+    /**
+     * Displays current round with string and numeral
+     */
+    public void displayForRoundTitle(int roundNumber) {
+        String roundNumberString = " " + roundNumber;
+        String roundNameString = getString(R.string.round_text);
+        String roundTitleString = roundNameString + roundNumberString;
+        roundTitle.setText(roundTitleString);
     }
 
     /**
@@ -111,6 +126,15 @@ public class Game3Players extends AppCompatActivity {
         scorePlayerC = scorePlayerC + 15;
         displayForPlayerC(scorePlayerC);
     }
+
+    // Add 1 to round numeral and display
+    public void addRound(View v) {
+        roundNumber += 1;
+        determineWinner();
+        displayForRoundTitle(roundNumber);
+    }
+
+    // Set all scores to 0
     public void reset(View v) {
         scorePlayerA = 0;
         scorePlayerB = 0;
@@ -118,6 +142,8 @@ public class Game3Players extends AppCompatActivity {
         displayForPlayerA(scorePlayerA);
         displayForPlayerB(scorePlayerB);
         displayForPlayerC(scorePlayerC);
+        roundNumber = 1;
+        displayForRoundTitle(roundNumber);
     }
 
     /**
@@ -149,11 +175,11 @@ public class Game3Players extends AppCompatActivity {
     // Use this function to check which, if any, players have over 500 and more points than the others.
     public void determineWinner(){
         if((scorePlayerA >= 500) && (scorePlayerA > scorePlayerB) && (scorePlayerA > scorePlayerC)){
-            Toast.makeText(this, playerAName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, playerAName.getText().toString() + " wins the game!", Toast.LENGTH_SHORT).show();
         } else if((scorePlayerB >= 500) && (scorePlayerB > scorePlayerA) && (scorePlayerB > scorePlayerC)){
-            Toast.makeText(this, playerBName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, playerBName.getText().toString() + " wins the game!", Toast.LENGTH_SHORT).show();
         } else if((scorePlayerC >= 500) && (scorePlayerC > scorePlayerA) && (scorePlayerC > scorePlayerB)){
-            Toast.makeText(this, playerCName.getText().toString() + " wins!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, playerCName.getText().toString() + " wins the game!", Toast.LENGTH_SHORT).show();
         }
     }
 }
