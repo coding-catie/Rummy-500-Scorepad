@@ -13,3 +13,4 @@ This project also utilizes the following (beyond scope):
 - EditText fields for player names
 - Options for 2-4 players
 - Toast message for winner
+- Displays and increments round number accordingly
