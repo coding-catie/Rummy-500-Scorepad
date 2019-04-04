@@ -1,69 +1,97 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/greenbackground"
     tools:context=".Enter4PlayersNames">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/greenfelt"
-        android:scaleType="fitXY" />
-
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:gravity="center">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/prompt_player_names"
             android:gravity="center_horizontal"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="24sp"
-            android:layout_marginTop="32dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
         <EditText
             android:id="@+id/player_a_name"
             android:inputType="textCapWords"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/player_A"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp" />
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
         <EditText
             android:id="@+id/player_b_name"
             android:inputType="textCapWords"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/player_B"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"/>
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
         <EditText
             android:id="@+id/player_c_name"
             android:inputType="textCapWords"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/player_C"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"/>
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
         <EditText
             android:id="@+id/player_d_name"
             android:inputType="textCapWords"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/player_D"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"/>
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:gravity="center">
         <Button
             android:id="@+id/next_button_game_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/next"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="32dp"/>
+            android:text="@string/next" />
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>

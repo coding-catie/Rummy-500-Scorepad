@@ -27,4 +27,7 @@
     <string name="game_two_players">2 Player Game</string>
     <string name="game_three_players">3 Player Game</string>
     <string name="game_four_players">4 Player Game</string>
+
+    <!-- Background image description -->
+    <string name="green_background_description">Green felt background</string>
 </resources>

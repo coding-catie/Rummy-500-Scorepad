@@ -1,47 +1,78 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/greenfelt">
+    android:orientation="vertical"
+    android:paddingBottom="50dp"
+    android:background="@drawable/greenbackground">
 
     <TextView
         android:id="@+id/welcome_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:text="@string/welcome"
         android:textSize="32sp"
         android:textColor="@color/white"
         android:textStyle="italic"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
+        android:gravity="center"
         android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"/>
-    <Button
-        android:id="@+id/two_player_button"
+        android:layout_marginRight="24dp"
+        android:layout_weight="2"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+        android:id="@+id/two_player_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/two_players"
-        android:layout_below="@id/welcome_text"
-        android:gravity="center_horizontal"
+        android:paddingStart="32dp"
+        android:paddingLeft="32dp"
+        android:paddingEnd="32dp"
+        android:paddingRight="32dp"
         android:layout_marginLeft="64dp"
-        android:layout_marginRight="64dp"/>
-    <Button
-        android:id="@+id/three_player_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/three_players"
-        android:layout_below="@id/two_player_button"
-        android:gravity="center_horizontal"
-        android:layout_marginLeft="64dp"
-        android:layout_marginRight="64dp"/>
-    <Button
-        android:id="@+id/four_player_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/four_players"
-        android:layout_below="@id/three_player_button"
-        android:gravity="center_horizontal"
-        android:layout_marginLeft="64dp"
-        android:layout_marginRight="64dp"/>
+        android:layout_marginRight="64dp" />
+    </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/three_player_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/three_players"
+            android:paddingStart="32dp"
+            android:paddingLeft="32dp"
+            android:paddingEnd="32dp"
+            android:paddingRight="32dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/four_player_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/four_players"
+            android:paddingStart="32dp"
+            android:paddingLeft="32dp"
+            android:paddingEnd="32dp"
+            android:paddingRight="32dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginRight="64dp" />
+    </LinearLayout>
+
+</LinearLayout>
