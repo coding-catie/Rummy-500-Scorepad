@@ -204,7 +204,43 @@ public class Game4Players extends AppCompatActivity {
 
     // Use this function to check which, if any, players have over 500 and more points than the others.
     public void determineWinner(){
-        if((scorePlayerA >= 500) && (scorePlayerA > scorePlayerB) && (scorePlayerA > scorePlayerC) && (scorePlayerA > scorePlayerD)){
+        // First, check for any ties
+        if((scorePlayerA == scorePlayerB) && (scorePlayerB == scorePlayerC) && (scorePlayerC == scorePlayerD) &&
+                (scorePlayerA >= 500)) {
+            Toast.makeText(this, "Everyone is tied!", Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerA == scorePlayerB) && (scorePlayerB == scorePlayerC) && (scorePlayerA >= 500)) {
+            Toast.makeText(this, "It's a tie between " + playerAName.getText().toString() + ", "
+                    + playerBName.getText().toString() + ", and " + playerCName.getText().toString() + "!", Toast.LENGTH_LONG).show();
+        } else if((scorePlayerA == scorePlayerB) && (scorePlayerB == scorePlayerD) && (scorePlayerA >= 500)) {
+            Toast.makeText(this, "It's a tie between " + playerAName.getText().toString() + ", "
+                    + playerBName.getText().toString() + ", and " + playerDName.getText().toString() + "!", Toast.LENGTH_LONG).show();
+        } else if((scorePlayerA == scorePlayerC) && (scorePlayerC == scorePlayerD) && (scorePlayerA >= 500)) {
+            Toast.makeText(this, "It's a between " + playerAName.getText().toString() + ", "
+                    + playerCName.getText().toString() + ", and " + playerDName.getText().toString() + "!", Toast.LENGTH_LONG).show();
+        } else if((scorePlayerB == scorePlayerC) && (scorePlayerC == scorePlayerD) && (scorePlayerB >= 500)) {
+            Toast.makeText(this, "It's a tie between " + playerBName.getText().toString() + ", "
+                    + playerCName.getText().toString() + ", and " + playerDName.getText().toString() + "!", Toast.LENGTH_LONG).show();
+        } else if((scorePlayerA == scorePlayerB) && (scorePlayerA >= 500)) {
+            Toast.makeText(this, playerAName.getText().toString() + " and " + playerBName.getText().toString() + " are tied!",
+                    Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerA == scorePlayerC) && (scorePlayerA >= 500)) {
+            Toast.makeText(this, playerAName.getText().toString() + " and " + playerCName.getText().toString() + " are tied!",
+                    Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerA == scorePlayerD) && (scorePlayerA >= 500)) {
+            Toast.makeText(this, playerAName.getText().toString() + " and " + playerDName.getText().toString() + " are tied!",
+                    Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerB == scorePlayerC) && (scorePlayerB >= 500)) {
+            Toast.makeText(this, playerBName.getText().toString() + " and " + playerCName.getText().toString() + " are tied!",
+                    Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerB == scorePlayerD) && (scorePlayerB >= 500)) {
+            Toast.makeText(this, playerBName.getText().toString() + " and " + playerDName.getText().toString() + "are tied!",
+                    Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerC == scorePlayerD) && (scorePlayerC >= 500)) {
+            Toast.makeText(this, playerCName.getText().toString() + " and " + playerDName.getText().toString() + " are tied!",
+                    Toast.LENGTH_SHORT).show();
+        }
+        // Regular score checking
+         else if((scorePlayerA >= 500) && (scorePlayerA > scorePlayerB) && (scorePlayerA > scorePlayerC) && (scorePlayerA > scorePlayerD)){
             Toast.makeText(this, playerAName.getText().toString() + " wins the game!", Toast.LENGTH_SHORT).show();
         } else if((scorePlayerB >= 500) && (scorePlayerB > scorePlayerA) && (scorePlayerB > scorePlayerC) && (scorePlayerB > scorePlayerD)){
             Toast.makeText(this, playerBName.getText().toString() + " wins the game!", Toast.LENGTH_SHORT).show();

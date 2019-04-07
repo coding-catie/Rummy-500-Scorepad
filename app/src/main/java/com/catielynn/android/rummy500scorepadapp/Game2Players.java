@@ -147,6 +147,9 @@ public class Game2Players extends AppCompatActivity {
             Toast.makeText(this, playerAName.getText().toString() + " wins the game!", Toast.LENGTH_SHORT).show();
         } else if(scorePlayerB >= 500 && scorePlayerB > scorePlayerA){
             Toast.makeText(this, playerBName.getText().toString() + " wins the game!", Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerA == scorePlayerB) && (scorePlayerA >= 500)){
+            Toast.makeText(this, playerAName.getText().toString() + " and " + playerBName.getText().toString()
+                    + " are tied!", Toast.LENGTH_LONG).show();
         }
     }
 }

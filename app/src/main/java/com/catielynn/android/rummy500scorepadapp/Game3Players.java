@@ -180,6 +180,17 @@ public class Game3Players extends AppCompatActivity {
             Toast.makeText(this, playerBName.getText().toString() + " wins the game!", Toast.LENGTH_SHORT).show();
         } else if((scorePlayerC >= 500) && (scorePlayerC > scorePlayerA) && (scorePlayerC > scorePlayerB)){
             Toast.makeText(this, playerCName.getText().toString() + " wins the game!", Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerA == scorePlayerB) && (scorePlayerB == scorePlayerC) && (scorePlayerA >= 500)) {
+            Toast.makeText(this, "It's a three way tie!", Toast.LENGTH_SHORT).show();
+        }   else if((scorePlayerA == scorePlayerB) && (scorePlayerA >= 500)) {
+            Toast.makeText(this, playerAName.getText().toString() + " and " + playerBName.getText().toString()
+                    + " are tied!", Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerA == scorePlayerC) && (scorePlayerA >= 500)) {
+            Toast.makeText(this, playerAName.getText().toString() + " and " + playerCName.getText().toString()
+                    + " are tied!", Toast.LENGTH_SHORT).show();
+        } else if((scorePlayerB == scorePlayerC) && (scorePlayerB >= 500)) {
+            Toast.makeText(this, playerBName.getText().toString() + " and " + playerCName.getText().toString()
+                    + " are tied!", Toast.LENGTH_SHORT).show();
         }
     }
 }
